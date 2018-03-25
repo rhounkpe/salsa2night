@@ -9,7 +9,6 @@ import Evenements from '../containers/Evenements';
 
 export default () => (
     <div>
-        <h2>Routes</h2>
         <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/qui-sommes-nous" component={About} />

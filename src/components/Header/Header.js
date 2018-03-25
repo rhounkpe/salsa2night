@@ -1,24 +1,62 @@
 import React from 'react';
-import NavLinks  from './NavLinks';
+import NavLinks from './NavLinks';
+import { NavLink, Link } from 'react-router-dom';
+import {
+    Collapse,
+    Navbar,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    NavItem,
+    UncontrolledDropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem,
+    Container
+} from 'reactstrap';
 
-const Header = () => {
-    return (
-        <header>
-            <nav>
-                <div className="container nav-wrapper">
-                    <a href="#!" class="brand-logo">Logo</a>
-                    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                    <ul className="right hide-on-med-and-down">
-                        <NavLinks />
-                    </ul>
-                </div>
-            </nav>
 
-            <ul className="sidenav" id="mobile-demo">
-                <NavLinks />
-            </ul>
-        </header>
-    );
-};
+class Header extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+            isOpen: false
+        };
+    }
+    toggle() {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    }
+
+
+    render() {
+        const navBarStyle = {
+            backgroundColor: '#3d5c5c'
+        };
+
+        return (
+            <div>
+                <Navbar color="navbar navbar-light" style={navBarStyle}>
+                    <Container>
+                        <Nav>
+                            <NavItem>
+                                <NavLink to="/">Salsa 2 Night</NavLink>
+                            </NavItem>
+                            <NavItem>
+                                <NavLink to="qui-sommes-nous">A propos</NavLink>
+                            </NavItem>
+                            <NavItem>
+                            <NavLink to="/contactez-nous">Contacts</NavLink>
+                            </NavItem>
+                        </Nav>
+                    </Container>
+                </Navbar>
+            </div>
+        );
+    }
+}
 
 export default Header;
