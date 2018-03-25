@@ -45,12 +45,22 @@ class Header extends React.Component {
                             <NavItem>
                                 <NavLink to="/">Salsa 2 Night</NavLink>
                             </NavItem>
+
                             <NavItem>
                                 <NavLink to="qui-sommes-nous">A propos</NavLink>
                             </NavItem>
+
                             <NavItem>
-                            <NavLink to="/contactez-nous">Contacts</NavLink>
+                                <NavLink to="/contactez-nous">Contacts</NavLink>
                             </NavItem>
+
+                            <NavItem>
+                                <NavLink to="galerie-photos">Galerie Photos</NavLink>
+                            </NavItem>
+                            
+                            <NavItem>
+                                <NavLink to="/galerie-videos">Galerie vidéos</NavLink>
+                            </NavItem>                            
                         </Nav>
                     </Container>
                 </Navbar>
